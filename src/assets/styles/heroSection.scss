@@ -1,0 +1,186 @@
+@import "variables";
+
+@mixin btn {
+    background: $white-clr none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 30px;
+    color: $black-clr2;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.42px;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 18px 45px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    transition: all 0.4s ease;
+    vertical-align: middle;
+    white-space: nowrap;
+
+}
+
+@media (min-width:991px) {
+    .hero-section {
+        position: relative;
+
+        .bg-hero {
+            position: absolute;
+            z-index: -1;
+            background: linear-gradient(0.41deg,
+                    $primary-clr 19.48%,
+                    rgba(46, 32, 255, 0.27) -13.62%,
+                    $black-clr2 267.11%);
+            filter: blur(225px);
+            -webkit-filter: blur(225px);
+            top: -1292px;
+            width: 1873px;
+            height: 2191px;
+            border-radius: 0 0 50% 50%;
+        }
+    }
+}
+
+@keyframes updownimg {
+    0% {
+        transform: rotateX(0deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotateX(0deg) translateY(-30px);
+    }
+
+    100% {
+        transform: rotateX(0deg) translateY(0px);
+    }
+}
+
+
+.hero-section {
+    overflow: hidden;
+
+    .container {
+        .hero-style1 {
+            position: relative;
+            padding: 220px 0 30px;
+
+            .hero-thumb {
+                margin: 0 -47px;
+
+                &.updown {
+                    animation-name: updownimg;
+                    animation-duration: 6s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+            }
+
+            .hero-title {
+                color: $white-clr;
+                margin-bottom: 0;
+                font-weight: 700;
+                letter-spacing: -2.8px;
+                font-size: 70px;
+                line-height: 1.2857;
+            }
+
+            .btn-wrap {
+                margin-top: 43px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 15px 15px;
+
+                .btn1 {
+                    @include btn;
+                    position: relative;
+                    z-index: 2;
+
+                    &:hover {
+                        color: $white-clr;
+                    }
+
+                    &::after {
+                        content: "\f054";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 700;
+                        color: $primary-clr;
+                        line-height: 1;
+                        margin-left: 40px;
+                        transition: all 0.3s ease 0s;
+                    }
+
+                    &:hover::after {
+                        color: $white-clr;
+                    }
+
+                    &::before {
+                        content: "";
+                        transition: all 0.475s;
+                        z-index: -1;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 101%;
+                        height: 100%;
+                        color: $white-clr;
+                        border-radius: inherit;
+                        background: linear-gradient(82.3deg,
+                                $primary-clr 10.8%,
+                                $theme-clr 94.3%);
+                        opacity: 0;
+                    }
+
+                    &:hover::before {
+                        opacity: 1;
+                    }
+                }
+
+                .btn2 {
+                    @include btn;
+                    position: relative;
+                    background-color: $black-clr2;
+                    color: $white-clr;
+
+                    &::after {
+                        content: "\f054";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 700;
+                        color: $white-clr;
+                        line-height: 1;
+                        margin-left: 40px;
+                        transition: all 0.3s ease 0s;
+                    }
+
+                    &:hover {
+                        color: $black-clr2;
+                        background-color: $white-clr;
+                    }
+
+                    &:hover::after {
+                        color: $primary-clr;
+                    }
+                }
+            }
+        }
+
+        .hero-countdown-wrap {
+            background: $black-clr2;
+            border-radius: 16px;
+            text-align: center;
+            padding: 80px 90px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            .hero-countdown-wrap-title {
+                color: $white-clr;
+                font-size: 40px;
+                font-weight: 600;
+                margin-bottom: 0;
+                margin-top: -0.25em;
+            }
+        }
+    }
+}
