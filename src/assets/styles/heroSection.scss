@@ -168,7 +168,7 @@
         }
 
         .hero-countdown-wrap {
-            background: $black-clr2;
+            background: $black-clr;
             border-radius: 16px;
             text-align: center;
             padding: 80px 90px;
@@ -180,6 +180,74 @@
                 font-weight: 600;
                 margin-bottom: 0;
                 margin-top: -0.25em;
+            }
+
+            .skill-feature_list {
+                padding: 0;
+                margin: 37px 0 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+
+                li {
+                    color: $white-clr;
+                    text-align: left;
+                    position: relative;
+
+                    &:first-child {
+                        width: 245px;
+                        padding-left: 24px;
+                    }
+
+                    &:nth-child(2) {
+                        width: 240px;
+                        text-align: center;
+                    }
+
+                    &:last-child {
+                        margin: 0 auto;
+                    }
+
+                    span {
+                        display: block;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 22px;
+                        height: 19px;
+                        border-bottom: solid 19px $black-clr2;
+                        border-left: solid 11px transparent;
+                        border-right: solid 11px transparent;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 26px);
+                    }
+                }
+            }
+
+            .skill-feature {
+                background: $black-clr2;
+                border-radius: 8px;
+                padding: 43px 36px 43px 24px;
+                display: flex;
+                gap: 27px;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 0 !important;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 0.5px;
+                    background: #1C1D34;
+                    top: 0;
+                    left: 22%;
+                    z-index: -1;
+                    opacity: 0.5;
+                }
             }
         }
     }
