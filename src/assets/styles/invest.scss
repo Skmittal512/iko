@@ -1,0 +1,61 @@
+@import "variables";
+
+.invest-area {
+    padding-top: 130px;
+    overflow: hidden;
+
+    .section-title {
+        margin-bottom: 50px;
+
+        .title {
+            color: $white-clr;
+            font-weight: 700;
+            font-size: 50px;
+            letter-spacing: -1.5px;
+            margin-bottom: 0;
+        }
+    }
+
+    .invest-card {
+        text-align: center;
+        background: $black-clr3;
+        border-radius: 15px;
+        padding: 70px 60px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        .invest-card-icon {
+            border-radius: 50%;
+            width: 99px;
+            height: 99px;
+            margin: auto;
+            margin-bottom: 70px;
+        }
+
+        .btn3 {
+            background-color: $white-clr;
+            border: medium none;
+            border-radius: 30px;
+            color: $black-clr2;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.42px;
+            line-height: 1;
+            margin-bottom: 0;
+            padding: 18px 45px;
+            text-align: center;
+            transition: all 0.3s ease-in;
+            white-space: nowrap;
+
+            &:hover {
+                background: linear-gradient(82.3deg,
+                        $primary-clr 10.8%,
+                        $theme-clr 94.3%);
+                color: $white-clr;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+}

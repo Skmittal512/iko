@@ -1,0 +1,108 @@
+@import "variables";
+
+.mt-40{
+    margin-top: 40px;
+}
+
+@keyframes updownimg {
+    0% {
+        transform: rotateX(0deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotateX(0deg) translateY(-30px);
+    }
+
+    100% {
+        transform: rotateX(0deg) translateY(0px);
+    }
+}
+
+.intro {
+    background-color: $black-clr;
+    padding-top: 130px;
+    overflow: hidden;
+    padding-bottom: 60px;
+
+    .section-title {
+        margin-bottom: 45px;
+
+        .title {
+            font-size: 50px;
+            margin-bottom: 0px;
+            letter-spacing: -1.5px;
+            font-weight: 700;
+            color: $white-clr;
+        }
+
+        .sec-text {
+            font-size: 18px;
+            margin-top: 30px;
+            line-height: 1.667;
+            margin-bottom: 0;
+            color: $para-clr;
+        }
+    }
+
+    .intro-wrap {
+        .intro-wrap-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: $white-clr;
+
+            &::before {
+                content: "";
+                position: relative;
+                display: inline-block;
+                height: 14px;
+                width: 14px;
+                border-radius: 50%;
+                background: $primary-clr;
+                margin-right: 9px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 70px;
+        }
+
+        .intro-wrap-text {
+            margin-bottom: -0.4em;
+            color: $para-clr;
+            font-weight: 400;
+        }
+    }
+
+    .updown {
+        text-align: center;
+        margin-top: -130px;
+        position: relative;
+        animation-name: updownimg;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 479.43px;
+            height: 71.62px;
+            background: linear-gradient(0.41deg,
+                    $primary-clr 7.48%,
+                    rgba(46, 32, 255, 0.27) 36.38%,
+                    $black-clr 67.11%);
+            filter: blur(23px);
+            border-radius: 50%;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+    }
+    .col-lg-6{
+        .intro-wrap{
+            margin-top: 50px;
+        }
+    }
+}

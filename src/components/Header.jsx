@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,6 +9,36 @@ import "../assets/styles/header.scss"
 import Logo from '../assets/images/logo.png'
 
 const Header = () => {
+
+  const [navbarColor, setNavbarColor] = useState('transparent');
+  const [scrollTimeout, setScrollTimeout] = useState(null);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      // Change navbar color when scrolled down
+      if (scrollPosition > 80) {
+        clearTimeout(scrollTimeout); // Clear previous timeout
+        setScrollTimeout(setTimeout(() => {
+          setNavbarColor('black');
+        }, 100)); // Delay color change by 300ms
+      } else {
+        clearTimeout(scrollTimeout); // Clear previous timeout
+        setNavbarColor('transparent');
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollTimeout]); // Include scrollTimeout in the dependency array
+
 
   const [showBlogs, setShowBlogs] = useState(false);
   const timeoutRef = useRef(null);
@@ -21,7 +51,7 @@ const Header = () => {
   const handleBlogsMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setShowBlogs(false);
-    }, 300);
+    }, 100);
   };
 
   const handleBlogsClick = () => {
@@ -29,10 +59,10 @@ const Header = () => {
   };
 
   return (
-    <Navbar expand="lg" className="mb-3 fixed-top">
+    <Navbar expand="lg" className="mb-3 fixed-top" style={{ backgroundColor: navbarColor, transition: 'background-color 0.3s ease-in-out' }}>
       <Container className='custom-container'>
         <Navbar.Brand href="#" className="me-auto">
-          <img src={Logo} alt="" style={{height: "35px"}}/>
+          <img src={Logo} alt="" style={{ height: "35px" }} />
         </Navbar.Brand>
         <Navbar.Offcanvas
           id="offcanvasNavbar"
@@ -41,7 +71,7 @@ const Header = () => {
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel">
-            <img src={Logo} alt="" style={{height: "35px"}}/>
+              <img src={Logo} alt="" style={{ height: "35px" }} />
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>

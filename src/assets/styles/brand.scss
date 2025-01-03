@@ -1,0 +1,81 @@
+@import "variables";
+
+.brand {
+    .container {
+        .brand-title {
+            margin-bottom: 60px;
+
+            .title {
+                display: inline-block;
+                position: relative;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 1.26px;
+                padding: 0 18px;
+                color: $white-clr;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: $primary-clr;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: auto;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: $primary-clr;
+                }
+            }
+        }
+
+        .brand-item-wrap {
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            position: relative;
+            padding: 45px 0;
+
+            &::after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width: 33px;
+                height: 33px;
+                background: $black-clr2;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+                transform: rotate(45deg) translate(-50%, 50%);
+                left: 50%;
+                top: -17px;
+                z-index: 1;
+            }
+
+            .mySwiper {
+                .swiper-slide {
+                    img {
+                        opacity: .5;
+                        cursor: pointer;
+                        transition: .3s linear;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

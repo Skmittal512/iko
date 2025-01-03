@@ -9,9 +9,22 @@ body{
     background-color: $black-clr2;
     font-family: 'Outfit', sans-serif;
 }
+::-webkit-scrollbar {
+    width: 7px;
+    background-color: #15073A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #362465;
+    border-radius: 4px;
+}
 a{
     text-decoration: none;
 }
 ul{
     list-style: none;
+}
+::selection{
+    background-color: $primary-clr;
+    color: $white-clr;
 }

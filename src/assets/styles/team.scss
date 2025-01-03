@@ -1,0 +1,107 @@
+@import "variables";
+
+.pb-110 {
+    padding-bottom: 110px;
+}
+
+.team-area {
+    padding-top: 130px;
+    padding-bottom: 140px;
+    overflow: hidden;
+    position: relative;
+
+    .bg-gradient-3 {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(to bottom,
+                    $primary-clr -5.52%,
+                    rgba(46, 32, 255, 0.27) 56.38%,
+                    $black-clr 207.11%);
+            filter: blur(175px);
+            inset: 100px 0 0;
+        }
+    }
+
+    .section-title {
+        margin-bottom: 50px;
+
+        .title {
+            color: $white-clr;
+            font-weight: 700;
+            font-size: 50px;
+            margin-bottom: 0;
+            letter-spacing: -1.5px;
+        }
+    }
+
+    .founder-card {
+        background: $black-clr3;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        padding: 50px 65px;
+
+        .founder-card-img {
+            mask-image: url(../images/team-mask.png);
+            mask-size: 100% 100%;
+            height: 235px;
+            width: 220px;
+            flex: none;
+
+            img {
+                transition: 0.4s;
+            }
+        }
+
+        &:hover .founder-card-img img {
+            transform: scale(1.05);
+        }
+
+        .founder-card-details {
+            .social-btn {
+                display: flex;
+                gap: 12px;
+            }
+
+            .social-btn a {
+                background: $white-clr;
+                color: #5729D6;
+                font-size: 18px;
+                height: 48px;
+                width: 48px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 50%;
+                line-height: 48px;
+                &:hover{
+                    background: rgba(255, 255, 255, 0.1);
+                    color: $para-clr;
+                }
+            }
+
+            .founder-card-title {
+                font-size: 35px;
+                font-weight: 600;
+                color: $white-clr;
+                letter-spacing: -0.03em;
+                margin-bottom: 15px;
+                transition: .3s;
+            }
+
+            .founder-card-desig {
+                font-size: 14px;
+                font-weight: 500;
+                color: $para-clr;
+            }
+        }
+    }
+}
